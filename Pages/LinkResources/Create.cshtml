@@ -1,0 +1,57 @@
+﻿@page
+@model LinkHubApp.Pages.LinkResources.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>LinkResources</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Links.Date" class="control-label"></label>
+                <input asp-for="Links.Date" class="form-control" />
+                <span asp-validation-for="Links.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Links.LinkName" class="control-label"></label>
+                <input asp-for="Links.LinkName" class="form-control" />
+                <span asp-validation-for="Links.LinkName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Links.LinkType" class="control-label"></label>
+                <input asp-for="Links.LinkType" class="form-control" />
+                <span asp-validation-for="Links.LinkType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Links.LinkUrl" class="control-label"></label>
+                <input asp-for="Links.LinkUrl" class="form-control" />
+                <span asp-validation-for="Links.LinkUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Links.LinkDescription" class="control-label"></label>
+                <input asp-for="Links.LinkDescription" class="form-control" />
+                <span asp-validation-for="Links.LinkDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn" style="background: #FFC470;" />
+            </div>
+        </form>
+    </div>
+    <div>
+        <!-- <img src="~/images/Files.jpeg" class="img-fluid" alt="Responsive image" style="width: 600px; float: right;" /> -->
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

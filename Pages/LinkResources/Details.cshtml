@@ -1,0 +1,49 @@
+﻿@page
+@model LinkHubApp.Pages.LinkResources.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>LinkResources</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Links.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Links.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Links.LinkName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Links.LinkName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Links.LinkType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Links.LinkType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Links.LinkUrl)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Links.LinkUrl)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Links.LinkDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Links.LinkDescription)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Links.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

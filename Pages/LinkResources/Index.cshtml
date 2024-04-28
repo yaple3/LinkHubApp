@@ -1,0 +1,72 @@
+﻿@page
+@model LinkHubApp.Pages.LinkResources.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table table-borderless">
+    <thead>
+        <tr style="border-bottom:solid #333">
+            <th>
+                @Html.DisplayNameFor(model => model.LinkResources[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LinkResources[0].LinkName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LinkResources[0].LinkType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LinkResources[0].LinkUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LinkResources[0].LinkDescription)
+            </th>
+            <th></th>
+            <hr />
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.LinkResources)
+        {
+        <tr>
+            <td>
+                @if (item.Date != null && item.Date != default(DateTime))
+                {
+                    @Html.DisplayFor(modelItem => item.Date)
+                }
+                else
+                {
+                        <text></text> <!-- Display blank if null or default DateTime -->
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LinkName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LinkType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LinkUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LinkDescription)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <hr/>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
